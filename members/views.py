@@ -12,8 +12,8 @@ def members(request):
     return render(request, "all_members.html",context)
 
 
-def details(request, id):
-    mymember = get_object_or_404(Member, id=id)
+def details(request, slug):
+    mymember = get_object_or_404(Member, slug=slug)
     context = {
         'mymember': mymember,
     }

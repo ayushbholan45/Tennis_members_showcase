@@ -4,9 +4,9 @@ from .models import Member     # added
 # Register your models here.
 
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ("firstname", "lastname", "joined_date", "phone")
-
-
+    list_display = ("firstname", "lastname", "joined_date", "phone",)
+    prepopulated_fields = {"slug": ("firstname", "lastname")}
+    
 admin.site.site_header = "My Tennis Club Admin"  
 admin.site.site_title = "Tennis Club Portal" 
 admin.site.index_title = "Welcome to the Tennis Club Admin Portal"
